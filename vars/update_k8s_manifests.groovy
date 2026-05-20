@@ -51,8 +51,8 @@ def call(Map config = [:]) {
                 # Clean prefix strings if Jenkins exposes it as 'origin/main'
                 CURRENT_BRANCH=\${CURRENT_BRANCH##*/}
                 
-                # Set up credentials for secure push to repository
-                git remote set-url origin https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/LondheShubham153/tws-e-commerce-app.git
+                # FIX: Changed target from LondheShubham153 to your own personal repository endpoint
+                git remote set-url origin https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/Hanzala-Israr/full-stack-easyshop-kubernetes-devops.git
                 git push origin HEAD:\${CURRENT_BRANCH}
             fi
         """
