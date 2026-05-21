@@ -35,7 +35,8 @@ def call(Map config = [:]) {
             
             # Ensure ingress is using the correct domain
             if [ -f "${manifestsPath}/10-ingress.yaml" ]; then
-                sed -i "s|host: .*|host: easyshop.51.20.253.89.sslip.io|g" ${manifestsPath}/10-ingress.yaml
+              # Update this line with your brand new EKS node IP
+                sed -i "s|host: .*|host: easyshop.13.60.89.200.sslip.io|g" ${manifestsPath}/10-ingress.yaml
             fi
            
             
