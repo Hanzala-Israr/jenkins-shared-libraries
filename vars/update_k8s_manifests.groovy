@@ -35,8 +35,10 @@ def call(Map config = [:]) {
             
             # Ensure ingress is using the correct domain
             if [ -f "${manifestsPath}/10-ingress.yaml" ]; then
-                sed -i "s|host: .*|host: easyshop.letsdeployit.com|g" ${manifestsPath}/10-ingress.yaml
+            # Automatically overwrites the host configuration with your worker node endpoint
+                sed -i "s|host: .*|host: easyshop.16.170.237.132.sslip.io|g" ${manifestsPath}/10-ingress.yaml
             fi
+           
             
             # Check for changes
             if git diff --quiet; then
